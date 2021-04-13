@@ -16,14 +16,14 @@ namespace Singleton_Pattern
             Console.WriteLine($"Counter Value {counter.ToString()}");
         }
 
-        private static readonly Singleton instance = new Singleton();
+        private static readonly Lazy<Singleton> instance = new Lazy<Singleton>(()=>new Singleton());
 
         //public  property is used to return only one instance of the class leveraging on the private property
         public static Singleton GetInstance
         {
             get
             {
-                return instance;
+                return instance.Value;
             }
         }
 
