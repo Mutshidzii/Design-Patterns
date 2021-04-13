@@ -6,7 +6,12 @@ namespace Singleton_Pattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Singleton fromEmployee = Singleton.GetInstance;
+            fromEmployee.PrintDetails("From Employee");
+
+            Singleton fromStudent = Singleton.GetInstance;
+            fromStudent.PrintDetails("From Student");
+            Console.ReadLine();
         }
     }
 }
